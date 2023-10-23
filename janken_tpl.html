@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width">
+<script src="js/jquery-2.1.3.min.js"></script>
+<link rel="stylesheet" href="css/sample.css">
+<title>じゃんけん</title>
+</head>
+<body>
+
+<header>
+  <h1>じゃんけん</h1>
+</header>
+
+<main>
+  <ul>
+    <li id="gu_btn">グー</li>
+    <li id="cho_btn">チョキ</li>
+    <li id="par_btn">パー</li>
+  </ul>
+  <div>コンピュータの出した手は？「<span id="pc_hands">なに？</span>」</div>
+  <div id="judgment">勝ち</div>
+</main>
+
+<footer></footer>
+<script>
+//じゃんけん用のSCRIPTを書いてください
+
+  const janken = ["gu_btn", "cho_btn", "par_btn"];
+
+  // 1→「グー」、2→「チョキ」、3→「パー」で指定する
+  // グーの勝敗
+  $("#gu_btn").on("click", function () {
+    const num = Math.random(); //小数点乱数
+    const r = Math.ceil(num * 3); //、繰り上げ、1〜3
+      // 勝敗の表示
+          $("#judgment").html();
+      if (r == 1) {
+        $("#judgment").html("あいこ");
+      }
+      if (r == 2) {
+        $("#judgment").html("勝ち");
+      }
+      if (r == 3) {
+        $("#judgment").html("負け");
+      }
+      // じゃんけんの表示
+      $("#pc_hands").html();
+      if (r == 1) {
+        $("#pc_hands").html("グー" + '<img width="400" src="./img/グー.jpg">');
+      }
+      if (r == 2) {
+        $("#pc_hands").html("チョキ");
+      }
+      if (r == 3) {
+        $("#pc_hands").html("パー");
+      }
+  });
+
+  // チョキの勝敗
+  $("#cho_btn").on("click", function () {
+    const num = Math.random(); //小数点乱数
+    const r = Math.ceil(num * 3); //、繰り上げ、1〜3
+    // 勝敗の表示
+    $("#judgment").html();
+    if (r == 1) {
+      $("#judgment").html("負け");
+    }
+    if (r == 2) {
+      $("#judgment").html("あいこ");
+    }
+    if (r == 3) {
+      $("#judgment").html("勝ち");
+    }
+    // じゃんけんの表示
+    $("#pc_hands").html();
+    if (r == 1) {
+      $("#pc_hands").html("グー");
+    }
+    if (r == 2) {
+      $("#pc_hands").html("チョキ");
+    }
+    if (r == 3) {
+      $("#pc_hands").html("パー");
+    }
+  });
+
+  // パーの勝敗
+  $("#par_btn").on("click", function () {
+    const num = Math.random(); //小数点乱数
+    const r = Math.ceil(num * 3); //、繰り上げ、1〜3
+    // 勝敗の表示
+    $("#judgment").html();
+    if (r == 1) {
+      $("#judgment").html("勝ち");
+    }
+    if (r == 2) {
+      $("#judgment").html("負け");
+    }
+    if (r == 3) {
+      $("#judgment").html("あいこ");
+    }
+    // じゃんけんの表示
+    $("#pc_hands").html();
+    if (r == 1) {
+      $("#pc_hands").html("グー");
+    }
+    if (r == 2) {
+      $("#pc_hands").html("チョキ");
+    }
+    if (r == 3) {
+      $("#pc_hands").html("パー");
+    }
+  });
+
+
+
+// if (r == 7 && r2 == 7 && r3 == 7) {
+
+//   }
+
+
+  // $("#pull").on("click", function () {
+  //   const num = Math.random(); //小数点乱数
+  //   const r = Math.ceil(num * 5); //、繰り上げ、1〜5
+  //   $("#echo").html(r + "だよ！");
+  //   // if (name == "") {
+  //   //     alert("名前が未入力です");
+  //   // }
+  //   if (r == 1) {
+  //     $("#echo").html('<img width="400" src="https://thetv.jp/i/tl/000/0131/0000131755_r.jpg">');
+  //     // $("#echo").html('<img width="400" src="https://cloudfront-ap-northeast-1.images.arcpublishing.com/sankei/ZAFCESM2HVPJJAOH5DZHX4WMZM.jpg">');
+  //   }
+  //   if (r == 2) {
+  //     $("#echo").html("中吉");
+  //   }
+  //   if (r == 3) {
+  //     $("#echo").html("正気？");
+  //   }
+  //   if (r == 4) {
+  //     $("#echo").html("吉");
+  //   }
+  //   if (r == 5) {
+  //     $("#echo").html("凶");
+  //   }
+  //   // $("#echo").html("大吉");
+  //   // $("#echo").prepend("1234");
+  //   // $("#echo").prepend("abcd");
+  //   // $("#echo").css("color", "#FF0000");
+  //   // $("#echo").css("font-size", "64px");
+  //   // $("#echo").slideUp(2000).slideDown(2000);
+  // });
+
+
+
+
+
+
+
+
+</script>
+</body>
+</html>
